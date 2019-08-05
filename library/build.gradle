@@ -12,7 +12,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
 
+    // Avoid: More than one file was found with OS independent path 'META-INF/library_release.kotlin_module'
+    compileOptions {
+        kotlinOptions.freeCompilerArgs += ['-module-name', "dev.sjaramillo.kdenticon"]
     }
 
     buildTypes {
