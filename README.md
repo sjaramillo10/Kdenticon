@@ -1,9 +1,11 @@
 # Kdenticon
 An extension of Jdenticon for Android.
 
-### Demo
+## Demo
 
 ![Kdenticon](https://i.postimg.cc/GpBXv37H/image.png)
+
+## Getting Started
 
 ### Add the library
 
@@ -46,3 +48,7 @@ You can change also modify the `text` and `hashAlgo` parameters to obtain the de
 kdenticonView.text = "text"
 kdenticonView.hashAlgo = HashAlgos.SHA256.ordinal
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
