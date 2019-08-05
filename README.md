@@ -42,5 +42,7 @@ Use it in your layouts:
 
 You can change also modify the `text` and `hashAlgo` parameters to obtain the desired Kdenticon like so:
 
-`kdenticonView.text = "text"`
-`kdenticonView.hashAlgo = HashAlgos.SHA256.ordinal`
+```java
+kdenticonView.text = "text"
+kdenticonView.hashAlgo = HashAlgos.SHA256.ordinal
+```
