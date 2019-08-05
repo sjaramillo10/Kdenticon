@@ -6,7 +6,10 @@ import android.widget.ArrayAdapter
 import dev.sjaramillo.kdenticon.HashAlgos
 import kotlinx.android.synthetic.main.activity_demo.*
 
-class DemoActivity : AppCompatActivity(){
+/**
+ * Simple activity used to demonstrate the usage of the KdenticonView.
+ */
+class DemoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
