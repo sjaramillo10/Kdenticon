@@ -10,6 +10,8 @@
     <dev.sjaramillo.kdenticon.KdenticonView
         android:layout_width="180dp"
         android:layout_height="180dp"
+        app:text="palmpaytest-6"
+        app:hash_algo="sha256"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KdenticonView">
+        <attr name="text" format="string" />
+        <attr name="hash_algo" format="enum" >
+            <enum name="md5" value="0" />
+            <enum name="sha1" value="1" />
+            <enum name="sha256" value="2" />
+            <enum name="sha512" value="3" />
+        </attr>
+    </declare-styleable>
+</resources>
