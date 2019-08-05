@@ -12,33 +12,26 @@ class KdenticonView(context: Context, attrs: AttributeSet) : ImageView(context, 
 
     companion object {
         private const val DEFAULT_TEXT = ""
-
-        // Hash algorithms
-        private const val MD5 = 0
-        private const val SHA1 = 1
-        private const val SHA256 = 2
-        private const val SHA512 = 3
     }
 
-    var hashAlgo = SHA256
+    var hashAlgo = HashAlgos.MD5.ordinal
         set(value) {
             field = value
 
-            renderJdenticon()
+            renderKdenticon()
         }
 
     var text = DEFAULT_TEXT
         set(value) {
             field = value
 
-            renderJdenticon()
+            renderKdenticon()
         }
 
     init {
-        val hash = "3CD098490EE45551C21DBBF12AAF370BF34F54FABF5BE4ADB8DC92003F011ACE" // palmpaytest-6 sha256
+        setBackgroundResource(android.R.color.white) // TODO make background color styleable
 
         setupAttributes(attrs)
-        renderJdenticon()
     }
 
     private fun setupAttributes(attrs: AttributeSet?) {
@@ -46,22 +39,22 @@ class KdenticonView(context: Context, attrs: AttributeSet) : ImageView(context, 
                 R.styleable.KdenticonView, 0, 0)
 
         text = typedArray.getString(R.styleable.KdenticonView_text) ?: DEFAULT_TEXT
-        hashAlgo = typedArray.getInt(R.styleable.KdenticonView_hash_algo, MD5)
+        hashAlgo = typedArray.getInt(R.styleable.KdenticonView_hash_algo, HashAlgos.MD5.ordinal)
 
         typedArray.recycle()
     }
 
-    private fun renderJdenticon() {
+    private fun renderKdenticon() {
         val hash = when(hashAlgo) {
-            MD5 -> HashUtils.md5(text)
-            SHA1 -> HashUtils.sha1(text)
-            SHA256 -> HashUtils.sha256(text)
-            SHA512 -> HashUtils.sha512(text)
+            HashAlgos.MD5.ordinal -> HashUtils.md5(text)
+            HashAlgos.SHA1.ordinal -> HashUtils.sha1(text)
+            HashAlgos.SHA256.ordinal -> HashUtils.sha256(text)
+            HashAlgos.SHA512.ordinal -> HashUtils.sha512(text)
             else -> ""
         }
 
         val size = 180
-        val padding = 0f
+        val padding = 0.05f
 
         val svgString = Jdenticon.toSvg(hash, size, padding)
 
